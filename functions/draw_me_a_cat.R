@@ -14,3 +14,12 @@ draw_me_a_cat <- function(size,
          coat_color_3 = coat_color[3])
 
 }
+
+
+change_body_color <- function(color){
+  
+}
+
+change_eyes_color <- function(color){
+  
+}

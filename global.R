@@ -1,15 +1,17 @@
 
 # Libraries ---------------------------------------------------------------
-
+library(magrittr)
 library(shiny)
+library(glue)
 library(shinyMobile)
 library(shinyWidgets)
-library(apexcharter)
+library(shinyjs)
+library(R.utils)
 
-poll <- data.frame(
-  answer = c("Yes", "No"),
-  n = c(254, 238)
-)
+
+# Functions --------------------------------------------------------------
+
+sourceDirectory("functions")
 
 # parameters --------------------------------------------------------------
 
