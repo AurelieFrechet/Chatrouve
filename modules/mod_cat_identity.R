@@ -29,7 +29,7 @@ catidentity_UI <- function(id) {
       # Color
       # uiOutput(ns("UI_color")),
       selectInput(
-        inputId = "select_color_1",
+        inputId = ns("select_color_1"),
         label   = "Coat Color",
         choices = coat_color$name
       ),

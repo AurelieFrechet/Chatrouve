@@ -7,6 +7,7 @@ library(shinyMobile)
 library(shinyWidgets)
 library(shinyjs)
 library(R.utils)
+library(stringr)
 
 
 # Functions --------------------------------------------------------------
