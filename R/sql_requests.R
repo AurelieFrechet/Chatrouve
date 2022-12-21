@@ -196,6 +196,23 @@ select_user <- function(db, email){
 
 
 
+# Exists ------------------------------------------------------------------
+
+
+#' Select user
+#' @import DBI
+#' @param db database connexion
+#' @param email character. ID of the cat
+#'
+#' @return data.frame
+exists_email <- function(db, email){
+  res <- dbGetQuery(db, 'SELECT * FROM users WHERE  email = :email',
+                    params = list(email = email))
+
+  return(nrow(res)>0)
+}
+
+
 # Delete table ------------------------------------------------------------
 
 delete_table_cats <- function(db){

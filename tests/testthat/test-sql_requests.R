@@ -24,8 +24,12 @@ test_that("insert valid values in table users", {
   expect_equal(user$name, "Maxime")
   expect_equal(user$email, "Maxime@maxime.fr")
   expect_equal(user$password, "zouzou")
+  
+  expect_true(exists_email(db, email = "Maxime@maxime.fr"))
+  expect_false(exists_email(db, email = "Maxime@chatrouvé."))
   dbDisconnect(db)
 })
+
 
 
 # CATS ----
