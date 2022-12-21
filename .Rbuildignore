@@ -1,0 +1,10 @@
+^LICENSE\.md$
+.Rproj
+.Rhistory
+.Rapp.history
+
+
+.RData
+
+
+.Ruserdata

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100mm" height="100mm" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(30.427 -80.698)">
+
+        <!-- Body -->
+        <g id="body" fill="#000" stroke="#000">
+            <rect x="5.1413" y="100.75" width="47.775" height="73.88" rx="6.825" ry="13.433" fill-rule="evenodd" stroke-width="10.156"/>
+            <path d="m5.1413 114.18v-26.865l20.475 13.433h6.825l20.475-13.433v26.865h-47.775" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.156"/>
+            <path d="m11.966 174.62c-20.475 0-34.125-13.433-34.125-40.298" fill="none" stroke-linecap="round" stroke-width="10.156"/>
+        </g>
+        <!-- Tail -->
+
+
+        <!-- Eyes -->
+        <g id="eyes" fill="#ffff00">
+            <ellipse cx="15.379" cy="116.86" rx="6.825" ry="6.7163"  fill-rule="evenodd"/>
+            <ellipse cx="42.679" cy="116.86" rx="6.825" ry="6.5297" fill-rule="evenodd"/>
+        </g>
+        
+        <!-- Pupils -->
+        <ellipse cx="15.379" cy="116.86" rx="3.4125" ry="5.0373" fill="#2b2200" fill-rule="evenodd"/>
+        <ellipse cx="42.679" cy="116.86" rx="3.4125" ry="5.0373" fill="#2b2200" fill-rule="evenodd"/>
+
+
+        <!-- Mouth, nose and Whiskers -->
+        <g id="whiskers" fill="#666" stroke="#666">
+            <path d="m26.64 124.25h5.1188l-2.73 3.3582z" stroke-linecap="round" stroke-linejoin="round" stroke-width=".33852"/>
+            <path d="m29.029 127.61v1.6791l-1.7063 1.6791" fill="none" stroke-width=".33852px"/>
+            <path d="m29.029 129.29 1.7063 1.6791" fill="none" stroke-width=".33852px"/>
+        </g>
+
+    </g>
+</svg>
