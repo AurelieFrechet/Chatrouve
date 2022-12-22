@@ -77,7 +77,7 @@ setMethod(
 #' @return Cat
 #' @export
 
-newCat <- function(db,
+new_cat <- function(db,
                    body_size,
                    fluffy,
                    coat_pattern,
@@ -128,6 +128,9 @@ newCat <- function(db,
  return(cat)  
 }
 
+
+
+# get a cat ---------------------------------------------------------------
 
 
 # Add a cat location ------------------------------------------------------

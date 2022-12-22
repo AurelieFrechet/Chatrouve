@@ -160,12 +160,12 @@ insert_into_users <- function(db, user_id, name, email, password){
 #' Select cats
 #' @import DBI
 #' @param db database connexion
-#' @param cat_id character. ID of the cat
+#' @param user_id character. ID of the user
 #'
 #' @return data.frame
-select_cats <- function(db, cat_id){
-  res <- dbGetQuery(db, 'SELECT * FROM cats WHERE  cat_id = :cat_id',
-             params = list(cat_id = cat_id))
+select_cats <- function(db, user_id){
+  res <- dbGetQuery(db, 'SELECT * FROM cats WHERE  user_id = :user_id',
+             params = list(user_id = user_id))
   return(res)
 }
 
