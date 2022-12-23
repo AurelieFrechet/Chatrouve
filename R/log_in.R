@@ -1,6 +1,7 @@
 #' Log In
 #' @include  sql_requests.R
 #' @import bcrypt
+#' @param db database connexion
 #' @param email character. email of the user, must not already exist in database
 #' @param password character. password chosen by the user
 #'
@@ -11,7 +12,7 @@ log_in <- function(db, email, password){
   
   user <- select_user(db, email)
   
-  res <- identical(user$password, hashpw(password, user$password)) 
+  res <- identical(user$password, bcrypt::hashpw(password, user$password)) 
   
   if(res){
     cats <- select_cats(db, user_id = user$user_id)

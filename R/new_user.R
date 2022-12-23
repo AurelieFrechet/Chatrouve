@@ -2,6 +2,7 @@
 #' @include  sql_requests.R
 #' @importFrom uuid UUIDgenerate
 #' @import bcrypt
+#' @import methods 
 #' @param db database connexion
 #' @param name character. name chosen by the user
 #' @param email character. email of the user, must not already exist in database
@@ -13,10 +14,10 @@ new_user <- function(db, name, email, password){
   if(exists_email(db, email)) stop(paste("email", email, "already exists"))
   
   user <- new(Class = "User", 
-              user_id  = UUIDgenerate(),
+              user_id  = uuid::UUIDgenerate(),
               name     = name,
               email    = email,
-              password = hashpw(password),
+              password = bcrypt::hashpw(password),
               cats     = list())
   
   

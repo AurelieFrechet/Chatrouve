@@ -6,22 +6,23 @@
 \usage{
 insert_into_cats(
   db,
-  id,
-  size,
+  cat_id,
+  body_size,
   fluffy,
   coat_pattern,
   coat_color,
   eyes_color,
   behavior,
-  comments
+  comments,
+  user_id
 )
 }
 \arguments{
 \item{db}{database connexion}
 
-\item{id}{character. ID of the cat}
+\item{cat_id}{character. ID of the cat}
 
-\item{size}{character. Size of the cat, between "kitten", "small", "medium", "big"}
+\item{body_size}{character. body_size of the cat, between "kitten", "small", "medium", "big"}
 
 \item{fluffy}{logical. Is the cat fluffy ?}
 
@@ -34,6 +35,8 @@ insert_into_cats(
 \item{behavior}{character. Behavior type of the cat}
 
 \item{comments}{character. Any comments of the user}
+
+\item{user_id}{character. ID of the user}
 }
 \description{
 Insert cat into database

@@ -16,10 +16,20 @@ Imports:
     DBI,
     rjson,
     methods,
-    RSQLite
+    RSQLite,
+    bcrypt,
+    uuid
 Collate: 
-    'sql_requests.R'
     'classCat.R'
+    'classLocation.R'
+    'classUser.R'
+    'sql_requests.R'
+    'get_cats.R'
+    'get_locations.R'
+    'log_in.R'
+    'new_cat.R'
+    'new_location.R'
+    'new_user.R'
     'random_catname.R'
 Depends: 
     R (>= 2.10)

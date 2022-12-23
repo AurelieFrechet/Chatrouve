@@ -15,14 +15,6 @@ setClass("User",
 
 # Initialize --------------------------------------------------------------
 
-#' Title
-#'
-#' @param User 
-#'
-#' @return
-#' @export
-#'
-#' @examples
 setMethod(
   f = "initialize",
   signature = "User",

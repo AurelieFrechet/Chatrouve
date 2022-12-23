@@ -57,7 +57,7 @@ test_that("insert valid values in table cats", {
     comments     = "",
     user_id      = "Maxime"
   )
-  cats <- select_cats(db, cat_id = "TEST01")
+  cats <- select_cats(db, user_id = "Maxime")
   expect_equal(cats$cat_id, "TEST01")
   expect_equal(cats$body_size, "small")
   expect_equal(cats$fluffy, 1)

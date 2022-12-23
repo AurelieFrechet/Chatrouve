@@ -8,3 +8,5 @@
 
 
 .Ruserdata
+^.*\.Rproj$
+^\.Rproj\.user$

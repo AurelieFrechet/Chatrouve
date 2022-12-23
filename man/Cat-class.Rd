@@ -13,7 +13,7 @@ class S4 Cat
 \item{\code{id}}{character. ID of the cat, composed of first letters of coat_pattern, coat_color and eyes_color
 and the datetime at the moment of creation}
 
-\item{\code{size}}{character. Size of the cat, between "kitten", "small", "medium", "big"}
+\item{\code{body_size}}{character. body_size of the cat, between "kitten", "small", "medium", "big"}
 
 \item{\code{fluffy}}{logical. Is the cat fluffy ?}
 
@@ -27,6 +27,6 @@ and the datetime at the moment of creation}
 
 \item{\code{comments}}{character. Any comments of the user}
 
-\item{\code{location}}{data.frame. date, lat and longituude of each occurence of the cat}
+\item{\code{location}}{list of Location}
 }}
 
