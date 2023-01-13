@@ -1,6 +1,7 @@
 #' new User
 #' @include  sql_requests.R
 #' @importFrom uuid UUIDgenerate
+#' @import scrypt
 #' @import bcrypt
 #' @import methods 
 #' @param db database connexion
@@ -17,7 +18,9 @@ new_user <- function(db, name, email, password){
               user_id  = uuid::UUIDgenerate(),
               name     = name,
               email    = email,
-              password = bcrypt::hashpw(password),
+              # password = bcrypt::hashpw(password),
+              # password = scrypt::hashPassword(password),
+              password = password,
               cats     = list())
   
   
