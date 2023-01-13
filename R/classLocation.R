@@ -5,7 +5,7 @@
 #' @slot lng numeric. longitude of the location
 setClass("Location",
          slots = c(
-           seen_at = "Date",
+           seen_at = "POSIXct",
            lat     = "numeric",
            lng     = "numeric"
          ))
@@ -20,7 +20,7 @@ setMethod(
                         seen_at,
                         lat,
                         lng){
-    .Object@seent_at <- seen_at
+    .Object@seen_at <- seen_at
     .Object@lat      <- lat
     .Object@lng      <- lng
     
