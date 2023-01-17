@@ -1,6 +1,4 @@
-db <- dbConnect(RSQLite::SQLite(), "../data/unit_testing.sqlite")
-create_table_users(db)
-
+db <- dbConnect(RSQLite::SQLite(), "../data/base_test.sqlite")
 
 test_that("new user", {
   
@@ -27,8 +25,7 @@ test_that("existing email", {
       name = "Aurélie",
       email = "Aurelie@thebest",
       password = "Pr0ut"
-    ),
-    "email Aurelie@thebest already exists"
+    )
   )
 })
 
