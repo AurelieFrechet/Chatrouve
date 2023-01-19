@@ -18,6 +18,7 @@ test_that("new user", {
 })
 
 
+
 test_that("existing email", {
   expect_error(
     Aurelie <- new_user(

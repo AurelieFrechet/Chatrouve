@@ -20,7 +20,7 @@ setMethod(
                         seen_at,
                         lat,
                         lng){
-    .Object@seen_at <- seen_at
+    .Object@seen_at  <- seen_at
     .Object@lat      <- lat
     .Object@lng      <- lng
     
