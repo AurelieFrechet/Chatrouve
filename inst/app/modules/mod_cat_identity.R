@@ -1,9 +1,8 @@
 catidentity_UI <- function(id) {
   ns <- NS(id)
-  tagList(
-    fluidRow(
+  tagList(fluidRow(
     column(width = 6,
-           htmlOutput(ns("cat_picture"))),
+           drawcat_UI(ns("cat"))),
     column(
       width = 6,
       # Size
@@ -55,16 +54,14 @@ catidentity_SERVER <- function(id) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
     
-    output$cat_picture <- renderText({
-      readLines(con = "www/img/dessin.svg") %>%
-        paste(collapse = " ") %>%
-        # str_replace_all(pattern = "id\\s?=\\s?\"(\\w+)\"",
-                        # replacement = paste0("id=\"", ns("\\1"),"\"")) %>% 
-        HTML()
+    observe({
+      drawcat_SERVER("cat",
+                     eyes_color = eyes_color$color[eyes_color$name == input$select_eyes],
+                     coat_color = coat_color$color[coat_color$name == input$select_color_1])
     })
     
     observe({
-      runjs(  
+      shinyjs::runjs(
         glue(
           '
       document.getElementById("body").style.fill="{coat_color}";
@@ -86,12 +83,15 @@ catidentity_SERVER <- function(id) {
 
 
 # Test --------------------------------------------------------------------
-
-ui <- fluidPage(useShinyjs(),
-                catidentity_UI("test"))
-
-server <- function(input, output, session) {
-  catidentity_SERVER("test")
-}
-
-shinyApp(ui, server)
+# library(shiny)
+# 
+# source("inst/app/modules/mod_drawcat.R")
+# 
+# ui <- fluidPage(useShinyjs(),
+#                 catidentity_UI("test"))
+# 
+# server <- function(input, output, session) {
+#   catidentity_SERVER("test")
+# }
+# 
+# shinyApp(ui, server)
