@@ -3,7 +3,7 @@
     <g transform="translate(30.427 -80.698)">
 
         <!-- Body -->
-        <g id="body" fill="#000" stroke="#000">
+        <g id="body" fill="black" stroke="black">
             <rect x="5.1413" y="100.75" width="47.775" height="73.88" rx="6.825" ry="13.433" fill-rule="evenodd" stroke-width="10.156"/>
             <path d="m5.1413 114.18v-26.865l20.475 13.433h6.825l20.475-13.433v26.865h-47.775" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.156"/>
             <path d="m11.966 174.62c-20.475 0-34.125-13.433-34.125-40.298" fill="none" stroke-linecap="round" stroke-width="10.156"/>
@@ -12,7 +12,7 @@
 
 
         <!-- Eyes -->
-        <g id="eyes" fill="#ffff00">
+        <g id="eyes" fill = "yellow">
             <ellipse cx="15.379" cy="116.86" rx="6.825" ry="6.7163"  fill-rule="evenodd"/>
             <ellipse cx="42.679" cy="116.86" rx="6.825" ry="6.5297" fill-rule="evenodd"/>
         </g>

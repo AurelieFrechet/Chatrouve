@@ -56,14 +56,13 @@ catidentity_SERVER <- function(id) {
     
     observe({
       drawcat_SERVER("cat",
-                     eyes_color = eyes_color$color[eyes_color$name == input$select_eyes],
-                     coat_color = coat_color$color[coat_color$name == input$select_color_1])
+                     eyes_color = eyes_color$color[eyes_color$name == isolate(input$select_eyes)],
+                     coat_color = coat_color$color[coat_color$name == isolate(input$select_color_1)])
     })
     
     observe({
       shinyjs::runjs(
-        glue(
-          '
+        glue::glue('
       document.getElementById("body").style.fill="{coat_color}";
       document.getElementById("body").style.stroke="{coat_color}";
       document.getElementById("eyes").style.fill="{eyes_color}";
@@ -83,15 +82,15 @@ catidentity_SERVER <- function(id) {
 
 
 # Test --------------------------------------------------------------------
-# library(shiny)
-# 
-# source("inst/app/modules/mod_drawcat.R")
-# 
-# ui <- fluidPage(useShinyjs(),
-#                 catidentity_UI("test"))
-# 
-# server <- function(input, output, session) {
-#   catidentity_SERVER("test")
-# }
-# 
-# shinyApp(ui, server)
+library(shiny)
+
+source("inst/app/modules/mod_drawcat.R")
+
+ui <- fluidPage(useShinyjs(),
+                catidentity_UI("test"))
+
+server <- function(input, output, session) {
+  catidentity_SERVER("test")
+}
+
+shinyApp(ui, server)

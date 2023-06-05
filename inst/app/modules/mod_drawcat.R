@@ -1,8 +1,7 @@
 # UI ----------------------------------------------------------------------
 drawcat_UI <- function(id) {
   ns <- NS(id)
-  tagList(
-  uiOutput(ns("cat_picture")))
+  tagList(uiOutput(ns("cat_picture")))
 }
 
 
@@ -14,46 +13,35 @@ drawcat_SERVER <- function(id, eyes_color, coat_color) {
     ns <- session$ns
     
     output$cat_picture <- renderUI({
-      drawing <-
-        paste(readLines("inst/app/www/img/dessin.svg", warn = FALSE),
-              collapse = " ")
-      
-      # Change eyes color
-      drawing <- stringr::str_replace_all(string      = drawing,
-                                          pattern     = "yellow",
-                                          replacement = eyes_color)
-      
-      # Change coat color
-      drawing <- stringr::str_replace_all(string      = drawing,
-                                          pattern     = "black",
-                                          replacement = coat_color)
-        
-      HTML(drawing)
-      
+      HTML(
+        draw_cat(
+          eyes_color = eyes_color, 
+          coat_color = coat_color
+      )
+      )
     })
-    
   })
 }
 
 
 
 # Test --------------------------------------------------------------------
-# library(shiny)
-# library(stringr)
-# library(shinyjs)
-# 
-# ui <- fluidPage(useShinyjs(),
-#                 drawcat_UI("test"),
-#                 drawcat_UI("test2")
-#                 )
-# 
-# server <- function(input, output, session) {
-#   drawcat_SERVER("test",
-#                  coat_color = "#e5aa8c",
-#                  eyes_color = "#24d4f9")
-#   drawcat_SERVER("test2",
-#                  eyes_color = "#e5fa8c",
-#                  coat_color = "#f4d3f9")
-# }
-# 
-# shinyApp(ui, server)
+library(shiny)
+library(stringr)
+library(shinyjs)
+
+ui <- fluidPage(useShinyjs(),
+                drawcat_UI("test"),
+                drawcat_UI("test2"),
+                verbatimTextOutput("drawing"))
+
+server <- function(input, output, session) {
+  drawcat_SERVER("test",
+                 coat_color = "#e5aa8c",
+                 eyes_color = "#24d4f9")
+  drawcat_SERVER("test2",
+                 eyes_color = "#e5fa8c",
+                 coat_color = "#f4d3f9")
+}
+
+shinyApp(ui, server)
