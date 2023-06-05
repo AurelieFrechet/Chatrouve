@@ -1,7 +1,3 @@
-
-
-
-
 # UI ----------------------------------------------------------------------
 
 catcard_UI <- function(id) {
@@ -48,7 +44,7 @@ catcard_SERVER <- function(id, name, eyes_color, coat_color) {
           HTML(draw_cat(eyes_color = eyes_color,
                        coat_color = coat_color)),
           div(class = "container",
-              h3(name))
+              h3(name, align = "center"))
           )
       
     })
@@ -57,23 +53,21 @@ catcard_SERVER <- function(id, name, eyes_color, coat_color) {
 
 
 # TEST --------------------------------------------------------------------
-library(shiny)
-library(stringr)
-library(shinyjs)
+# library(shiny)
+# source("R/draw_cat.R")
 
-ui <- fluidPage(useShinyjs(),
-                catcard_UI("test"),
-                catcard_UI("test2"))
-
-server <- function(input, output, session) {
-  catcard_SERVER("test",
-                 name = "Bob",
-                 coat_color = "#e5aa8c",
-                 eyes_color = "#24d4f9")           
-  catcard_SERVER("test2",
-                 name = "Alice",
-                 eyes_color = "#e5fa8c",
-                 coat_color = "#f4d3f9")
-}
-
-shinyApp(ui, server)
+# ui <- fluidPage(catcard_UI("test"),
+#                 catcard_UI("test2"))
+# 
+# server <- function(input, output, session) {
+#   catcard_SERVER("test",
+#                  name = "Bob",
+#                  coat_color = "#e5aa8c",
+#                  eyes_color = "#24d4f9")           
+#   catcard_SERVER("test2",
+#                  name = "Alice",
+#                  eyes_color = "#e5fa8c",
+#                  coat_color = "#f4d3f9")
+# }
+# 
+# shinyApp(ui, server)
