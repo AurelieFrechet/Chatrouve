@@ -104,18 +104,26 @@ locatlisation_SERVER <-
         
       })
       
+      return(center)
+      
     })
   }
 
 
 # Test --------------------------------------------------------------------
+library(shiny)
 library(glue)
 library(leaflet)
 
-ui <- fluidPage(locatlisation_UI("test"))
+ui <- fluidPage(
+  div(locatlisation_UI("test")),
+                verbatimTextOutput("res"))
 
 server <- function(input, output, session) {
-  locatlisation_SERVER("test")
+  test <- locatlisation_SERVER("test")
+  output$res <- renderPrint({
+    reactiveValuesToList(test)
+  })
 }
 
 shinyApp(ui, server)
